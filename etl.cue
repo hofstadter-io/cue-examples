@@ -15,7 +15,7 @@ Etl : {
   _In: Foo
   _Out: Goo & {
     Name: _In.a
-    Version: _In.b
+    Version: _In.b + "." + _In.c
   }
 }
 
