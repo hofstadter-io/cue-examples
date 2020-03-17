@@ -9,20 +9,20 @@ Object :: {
 
 A : a
 
-GetRef: {
+MakeRef: {
   X: Object
   Y: "\(X.Name)"
 }
 
 a :: Object & {
   Name: "a"
-  Ref : (GetRef & {X: b}).Y
+  Ref : (MakeRef & {X: b}).Y
   // Obj: b
 }
 
 b :: Object & {
   Name: "b"
-  Ref : (GetRef & {X: a}).Y
+  Ref : (MakeRef & {X: a}).Y
   // Obj: a
 }
 
