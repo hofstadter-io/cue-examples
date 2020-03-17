@@ -1,4 +1,6 @@
-package embedding2
+package embedding
+
+// This example shows how to have a conditionally dependent field with embeddings
 
 A:: {
 	Name: string

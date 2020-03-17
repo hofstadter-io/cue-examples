@@ -1,5 +1,8 @@
 package embedding
 
+// This example explores how embeddings can work
+// and compares them to '&'
+
 A1 :: {
 	Name: string
 	Age: int
