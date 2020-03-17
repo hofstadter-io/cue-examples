@@ -1,9 +1,9 @@
-package circular
+package cross
 
 Object :: {
   Name: string
   Ref: string
-  Obj? :: Object
+  Obj?: Object
   ...
 }
 
