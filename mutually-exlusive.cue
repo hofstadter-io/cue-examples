@@ -9,6 +9,35 @@ Xnon :: { a?: string } | { b?: string } | {}
 // Create an exlusive mixed pair
 Xmix :: { a: string, d: string } | { b?: string }
 
+
+// FROM slack
+
+Y :: X & {a?: _|_} | {b?: _|_}
+
+X :: {a?: _|_} | {b?: _|_}
+
+X :: {
+	foo: string
+	message: (switch & {
+		value: foo
+		cases: [{
+			value: "hello"
+			result: "greetings"
+		}, {
+			value: "goodbye"
+			result: "farewell"
+		}]
+	}).result
+}
+
+// END slack
+
+
+
+
+
+
+
 // Embed the exclusive fields in a struct
 Yreq :: {
   Xreq
