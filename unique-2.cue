@@ -38,14 +38,17 @@ languages :: {
 	}
 	Blah: {
 		name: "Blah"
-		env: ["fish"]
+		// env: ["fish", "sticks"]
 		extensions: ["fish"]
 	    shebangs: ["#!/bin/fish"]
 	}
 }
 
 // Output
-requireUniqueLanguages: true & list.UniqueItems([v.name for k,v in languages])
+envs1 :: [v.env[0] for k,v in languages if len(v.env) > 0]
+envsA :: [v.env for k,v in languages if len(v.env) > 0]
+requireEnvs1: true & list.UniqueItems(envs1)
+requireEnvsA: true & list.UniqueItems(envsA)
 keys :: list.SortStrings([k for k,v in languages]) 
 output: [languages[v] for k,v in keys]
 
